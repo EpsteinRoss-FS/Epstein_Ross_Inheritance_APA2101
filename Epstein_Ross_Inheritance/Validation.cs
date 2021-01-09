@@ -18,5 +18,11 @@ namespace Epstein_Ross_Inheritance
             bool isItInt = int.TryParse(intCheck, out _);
             return (isItInt);
         }
+
+        public static bool CheckRange(int num, int maxNum)
+        {
+            bool isInRange = (num > 0 && num <= maxNum);
+            return (isInRange);
+        }
     }
 }
