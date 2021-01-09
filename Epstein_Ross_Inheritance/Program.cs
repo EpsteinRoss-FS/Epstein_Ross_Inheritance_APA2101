@@ -6,7 +6,7 @@ namespace Epstein_Ross_Inheritance
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            CourseManager course = new CourseManager();
         }
     }
 }

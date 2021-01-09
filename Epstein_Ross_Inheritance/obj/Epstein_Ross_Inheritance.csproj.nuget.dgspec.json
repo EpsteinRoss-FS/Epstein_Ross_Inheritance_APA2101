@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "H:\\FullSailDocs\\Classes\\8 - Application Architecture\\1 - Review, Enapsulation, and Inheritance\\1.5  - Code Excercise - Inheritance\\Epstein_Ross_Inheritance\\Epstein_Ross_Inheritance\\Epstein_Ross_Inheritance.csproj": {}
+    "H:\\FullSailDocs\\Classes\\8 - Application Architecture\\1 - Review, Enapsulation, and Inheritance\\1.5\\Epstein_Ross_Inheritance\\Epstein_Ross_Inheritance\\Epstein_Ross_Inheritance.csproj": {}
   },
   "projects": {
-    "H:\\FullSailDocs\\Classes\\8 - Application Architecture\\1 - Review, Enapsulation, and Inheritance\\1.5  - Code Excercise - Inheritance\\Epstein_Ross_Inheritance\\Epstein_Ross_Inheritance\\Epstein_Ross_Inheritance.csproj": {
+    "H:\\FullSailDocs\\Classes\\8 - Application Architecture\\1 - Review, Enapsulation, and Inheritance\\1.5\\Epstein_Ross_Inheritance\\Epstein_Ross_Inheritance\\Epstein_Ross_Inheritance.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\FullSailDocs\\Classes\\8 - Application Architecture\\1 - Review, Enapsulation, and Inheritance\\1.5  - Code Excercise - Inheritance\\Epstein_Ross_Inheritance\\Epstein_Ross_Inheritance\\Epstein_Ross_Inheritance.csproj",
+        "projectUniqueName": "H:\\FullSailDocs\\Classes\\8 - Application Architecture\\1 - Review, Enapsulation, and Inheritance\\1.5\\Epstein_Ross_Inheritance\\Epstein_Ross_Inheritance\\Epstein_Ross_Inheritance.csproj",
         "projectName": "Epstein_Ross_Inheritance",
-        "projectPath": "H:\\FullSailDocs\\Classes\\8 - Application Architecture\\1 - Review, Enapsulation, and Inheritance\\1.5  - Code Excercise - Inheritance\\Epstein_Ross_Inheritance\\Epstein_Ross_Inheritance\\Epstein_Ross_Inheritance.csproj",
+        "projectPath": "H:\\FullSailDocs\\Classes\\8 - Application Architecture\\1 - Review, Enapsulation, and Inheritance\\1.5\\Epstein_Ross_Inheritance\\Epstein_Ross_Inheritance\\Epstein_Ross_Inheritance.csproj",
         "packagesPath": "C:\\Users\\rosse\\.nuget\\packages\\",
-        "outputPath": "H:\\FullSailDocs\\Classes\\8 - Application Architecture\\1 - Review, Enapsulation, and Inheritance\\1.5  - Code Excercise - Inheritance\\Epstein_Ross_Inheritance\\Epstein_Ross_Inheritance\\obj\\",
+        "outputPath": "H:\\FullSailDocs\\Classes\\8 - Application Architecture\\1 - Review, Enapsulation, and Inheritance\\1.5\\Epstein_Ross_Inheritance\\Epstein_Ross_Inheritance\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

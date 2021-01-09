@@ -6,5 +6,6 @@ namespace Epstein_Ross_Inheritance
 {
     class Teacher
     {
+     
     }
 }

@@ -6,5 +6,11 @@ namespace Epstein_Ross_Inheritance
 {
     class CourseManager
     {
+
+        public CourseManager()
+        {
+            Console.WriteLine("Testing");
+        }
+
     }
 }
