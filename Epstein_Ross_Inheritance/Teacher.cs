@@ -8,8 +8,9 @@ namespace Epstein_Ross_Inheritance
     {
         public string _teacherInfo { get; set; }
 
-        public Teacher(string name, string personDescription, int age, string teacherInfo):base(name,personDescription,age) 
+        public Teacher(string name = "AWAITING NAME",string personDescription = "AWAITING DESCRIPTION", int age = 00, string teacherInfo = "AWAITING INFO") :base(name,personDescription,age) 
         {
+
             _teacherInfo = teacherInfo;
         }     
     }
