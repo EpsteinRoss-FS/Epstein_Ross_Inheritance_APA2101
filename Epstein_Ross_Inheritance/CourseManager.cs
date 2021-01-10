@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Epstein_Ross_CE02
 {
     class CourseManager
     {
-        public bool exit = false;
+        public static bool exit = false;
         private static List<string> menu = new List<string> { "Create Course", "Create Teacher", "Add Student", "Display","Exit" };
+        public static Course newCourse;
 
         public CourseManager()
         {
@@ -97,10 +99,24 @@ namespace Epstein_Ross_CE02
             
                     break;
                 case "display":
-            
+
+                    if (newCourse == null)
+                    {
+                        Console.WriteLine("PLEASE CREATE A COURSE BEFORE SELECTING THIS OPTION!");
+                        Console.WriteLine("Press any key to continue...");
+                        Console.ReadKey();
+                        Console.Clear();
+                    }
+                    else
+                    {
+                        
+                        Display();
+                    }
+                    
                     break;
                 case "exit":
-            
+                    Console.WriteLine("Thank you for using my application!");
+                    exit = true;
                     break;
                 default:
                     break;
@@ -296,22 +312,45 @@ namespace Epstein_Ross_CE02
             
             }
 
-            //get length of list
-            int studentArrayLength = newStudents.Count;
-            Console.WriteLine(studentArrayLength);
-//            public Student(string name = "AWAITING NAME", string personDescription = "AWAITING DESCRIPTION", int age = 00, int grade = 0):base(name, personDescription, age)
+            Student[] courseStudents = newStudents.ToArray();
 
 
+            newCourse = new Course(newTeacher, courseStudents, courseName, courseDescription);
 
-            //Course newCourse = new Course();
-
-
-
-
-
-
-
+            
+            
         }
+
+
+        public static void Display() 
+        {
+            
+            Console.Clear();
+            Console.WriteLine($"===========================================");
+            Console.WriteLine($"{newCourse._courseTitle.ToUpper()} INFORMATION");
+            Console.WriteLine($"===========================================");
+
+            Console.WriteLine($"COURSE NAME: {newCourse._courseTitle}");
+            Console.WriteLine($"COURSE DESCRIPTION: {newCourse._courseDecsription}");
+            Console.WriteLine($"\nTEACHER NAME: {newCourse._teacher._name}");
+            Console.WriteLine($"TEACHER AGE: {newCourse._teacher._age}");
+            Console.WriteLine($"TEACHER INFO: {newCourse._teacher._teacherInfo}");
+            Console.WriteLine($"TEACHER DESCRIPTION: {newCourse._teacher._personDescription}");
+
+            foreach (var student in newCourse._student) 
+            {
+                Console.WriteLine($"\nSTUDENT NAME: {student._name}");
+                Console.WriteLine($"STUDENT AGE: {student._age}");
+                Console.WriteLine($"STUDENT GRADE: {student._grade}");
+                Console.WriteLine($"STUDENT DESCRIPTION: {student._personDescription}");
+
+            }
+
+            Console.WriteLine("Press any key to return to the menu...");
+            Console.ReadKey();
+            Console.Clear();
+        }
+        
     }
 }
 

@@ -8,10 +8,12 @@ namespace Epstein_Ross_CE02
     {
         public string _courseTitle { get; set; }
         public string _courseDecsription { get; set; }
-        Teacher _teacher { get; set; }
-        Student[] _student { get; set; }
-
-        public Course(string courseTitle, string courseDescription, Teacher teacher, Student[] student)
+        public Teacher _teacher { get; set; }
+        public Student[] _student { get; set; }
+        public Teacher teacher = new Teacher();
+        public Student[] student = new Student[0];
+        
+        public Course(Teacher teacher, Student[] student, string courseTitle = "undefined", string courseDescription = "undefined")
         {
             _courseTitle = courseTitle;
             _courseDecsription = courseDescription;
