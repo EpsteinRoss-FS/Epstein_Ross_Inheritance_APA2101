@@ -1,7 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿/** 
+ * Ross Epstein
+ * CE02 - Inheritance
+ * 01-10-2021
+ * **/
 namespace Epstein_Ross_CE02
 {
     class Person

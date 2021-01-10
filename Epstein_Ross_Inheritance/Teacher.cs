@@ -1,4 +1,9 @@
-﻿using System;
+﻿/** 
+ * Ross Epstein
+ * CE02 - Inheritance
+ * 01-10-2021
+ * **/
+using System;
 using System.Collections.Generic;
 using System.Text;
 

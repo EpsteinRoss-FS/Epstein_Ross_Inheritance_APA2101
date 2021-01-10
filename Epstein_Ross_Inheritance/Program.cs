@@ -1,4 +1,9 @@
-﻿using System;
+﻿/** 
+ * Ross Epstein
+ * CE02 - Inheritance
+ * 01-10-2021
+ * **/
+using System;
 
 namespace Epstein_Ross_CE02
 {

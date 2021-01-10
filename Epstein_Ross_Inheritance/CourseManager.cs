@@ -1,4 +1,10 @@
-﻿using System;
+﻿/** 
+ * Ross Epstein
+ * CE02 - Inheritance
+ * 01-10-2021
+ * **/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -159,7 +165,7 @@ namespace Epstein_Ross_CE02
             //create teacher
             //teacher name
             Console.Clear();
-            Console.WriteLine("What is the name of the teacher for this course?  >  ");
+            Console.Write("What is the name of the teacher for this course?  >  ");
             string teacherName = Console.ReadLine();
             bool teacherNameValid = Validation.ValidateString(teacherName);
             while (!teacherNameValid)
@@ -172,7 +178,7 @@ namespace Epstein_Ross_CE02
 
             //teacher description
             Console.Clear();
-            Console.WriteLine("What is the description of the teacher?  >  ");
+            Console.Write("What is the description of the teacher?  >  ");
             string teacherDescription = Console.ReadLine();
             bool teachDescriptionValid = Validation.ValidateString(teacherDescription);
             while (!teachDescriptionValid)
@@ -185,7 +191,7 @@ namespace Epstein_Ross_CE02
 
             //teacher age
             Console.Clear();
-            Console.WriteLine("How old is the teacher?  >  ");
+            Console.Write("How old is the teacher?  >  ");
             string teacherAge = Console.ReadLine();
             bool teacherAgeValid = Validation.CheckInt(teacherAge);
             while (!teacherAgeValid)
@@ -258,7 +264,7 @@ namespace Epstein_Ross_CE02
                 {
                     Console.Clear();
                     Console.WriteLine("Invalid entry!");
-                    Console.WriteLine($"How old is student {i}?  >  ");
+                    Console.Write($"How old is student {i}?  >  ");
                     studentAge = Console.ReadLine();
                     studentAgeValid = Validation.CheckInt(studentAge);
                 }
@@ -354,7 +360,7 @@ namespace Epstein_Ross_CE02
             //create teacher
             //teacher name
             Console.Clear();
-            Console.WriteLine("What is the name of the teacher for this course?  >  ");
+            Console.Write("What is the name of the teacher for this course?  >  ");
             string teacherName = Console.ReadLine();
             bool teacherNameValid = Validation.ValidateString(teacherName);
             while (!teacherNameValid)
@@ -367,7 +373,7 @@ namespace Epstein_Ross_CE02
 
             //teacher description
             Console.Clear();
-            Console.WriteLine("What is the description of the teacher?  >  ");
+            Console.Write("What is the description of the teacher?  >  ");
             string teacherDescription = Console.ReadLine();
             bool teachDescriptionValid = Validation.ValidateString(teacherDescription);
             while (!teachDescriptionValid)
@@ -380,7 +386,7 @@ namespace Epstein_Ross_CE02
 
             //teacher age
             Console.Clear();
-            Console.WriteLine("How old is the teacher?  >  ");
+            Console.Write("How old is the teacher?  >  ");
             string teacherAge = Console.ReadLine();
             bool teacherAgeValid = Validation.CheckInt(teacherAge);
             while (!teacherAgeValid)
@@ -443,7 +449,7 @@ namespace Epstein_Ross_CE02
                 {
                     Console.Clear();
                     Console.WriteLine("Invalid entry!");
-                    Console.WriteLine($"What is student {i}'s description?");
+                    Console.Write($"What is student {i}'s description?");
                     studentDescription = Console.ReadLine();
                     studentDescriptionValid = Validation.ValidateString(studentDescription);
                 }
@@ -457,7 +463,7 @@ namespace Epstein_Ross_CE02
                 {
                     Console.Clear();
                     Console.WriteLine("Invalid entry!");
-                    Console.WriteLine($"How old is student {i}?  >  ");
+                    Console.Write($"How old is student {i}?  >  ");
                     studentAge = Console.ReadLine();
                     studentAgeValid = Validation.CheckInt(studentAge);
                 }
