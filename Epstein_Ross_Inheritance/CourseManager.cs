@@ -15,7 +15,7 @@ namespace Epstein_Ross_CE02
     {
         //intialize variables
         public static bool exit = false;
-        private static List<string> menu = new List<string> { "Create Course", "Create Teacher", "Add Student", "Display","Exit" };
+        private static List<string> menu = new List<string> { "Create Course", "Create Teacher", "Add Student", "Display","Change Grade","Exit" };
         public static Course newCourse;
 
         //primary loop
@@ -127,6 +127,19 @@ namespace Epstein_Ross_CE02
                         Display();
                     }
                     
+                    break;
+                case "Change Grade":
+                    if (newCourse == null)
+                    {
+                        Console.WriteLine("PLEASE CREATE A COURSE BEFORE SELECTING THIS OPTION!");
+                        Console.WriteLine("Press any key to continue...");
+                        Console.ReadKey();
+                        Console.Clear();
+                    }
+                    else 
+                    {
+                        ChangeGrade();
+                    }
                     break;
                 case "Exit":
                     Console.WriteLine("Thank you for using my application!");
@@ -352,7 +365,7 @@ namespace Epstein_Ross_CE02
             
             Console.Clear();
             Console.WriteLine($"===========================================");
-            Console.WriteLine($"{newCourse._courseTitle.ToUpper()} INFORMATION");
+            Console.WriteLine($"COURSE {newCourse._courseTitle.ToUpper()} INFORMATION");
             Console.WriteLine($"===========================================");
 
             Console.WriteLine($"COURSE NAME: {newCourse._courseTitle}");
@@ -550,6 +563,74 @@ namespace Epstein_Ross_CE02
 
             //reassign the value of the students in the course
             newCourse._student = combined;
+        }
+
+        public static void ChangeGrade() 
+        {
+            Console.Clear();
+            
+
+            int menuLength = newCourse._student.Count() - 1;
+            int i = 1;
+            foreach (var student in newCourse._student)
+            {
+                Console.WriteLine($"[{i}]: {student._name}");
+                i++;
+            }
+
+            Console.Write("Please make a selection >  ");
+            string _userChoice = Console.ReadLine();
+
+            //validate the choice is an integer
+            bool isInt = Validation.CheckInt(_userChoice);
+            int _userChoiceInt = isInt ? Int32.Parse(_userChoice) : 000;
+
+            //validate the choice is in range of the studnets
+            bool isInRange = Validation.CheckRange(_userChoiceInt, menuLength + 1);
+
+            //ask again if the validation returns false
+            while (!isInt || !isInRange)
+            {
+                i = 1;
+                Console.Clear();
+                foreach (var item in menu)
+                {
+                    Console.WriteLine($"[{i}]:  {item}");
+                    i++;
+                }
+
+                //error if selection out of range    
+                Console.Write($"Invalid entry!  Please enter a number between 1 and {menuLength} > ");
+                _userChoice = Console.ReadLine();
+                isInt = Validation.CheckInt(_userChoice);
+                _userChoiceInt = isInt ? Int32.Parse(_userChoice) : 000; ;
+                isInRange = Validation.CheckRange(_userChoiceInt, (menuLength + 1));
+            }
+
+            
+            
+            Console.Write($"What would you like to change the grade for {newCourse._student[_userChoiceInt - 1]._name} to? ");
+
+            string newGrade = Console.ReadLine();
+            bool validateGradeInt = Validation.CheckInt(newGrade);
+            bool validateGradeRange = Validation.CheckRange(0, 100);
+            while (!validateGradeInt || !validateGradeRange) 
+            {
+                Console.Clear();
+                Console.WriteLine("Invalid entry!  Grades must be between 0 and 100!");
+                Console.Write($"What would you like to change the grade for {newCourse._student[_userChoiceInt - 1]._name} to? ");
+
+                newGrade = Console.ReadLine();
+                validateGradeInt = Validation.CheckInt(newGrade);
+                validateGradeRange = Validation.CheckRange(0, 100);
+
+            }
+
+            int gradeInt = Int32.Parse(newGrade);
+
+            newCourse._student[_userChoiceInt - 1]._grade = gradeInt;
+            Console.Clear();
+
         }
 
     }

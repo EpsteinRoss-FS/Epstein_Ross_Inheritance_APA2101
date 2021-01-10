@@ -29,7 +29,7 @@ namespace Epstein_Ross_CE02
         //verify that the provided int is in range
         public static bool CheckRange(int num, int maxNum)
         {
-            bool isInRange = (num > 0 && num <= maxNum);
+            bool isInRange = (num >= 0 && num <= maxNum);
             return (isInRange);
         }
     }
