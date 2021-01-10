@@ -13,10 +13,12 @@ namespace Epstein_Ross_CE02
 {
     class CourseManager
     {
+        //intialize variables
         public static bool exit = false;
         private static List<string> menu = new List<string> { "Create Course", "Create Teacher", "Add Student", "Display","Exit" };
         public static Course newCourse;
 
+        //primary loop
         public CourseManager()
         {
             //loop the program
@@ -26,12 +28,11 @@ namespace Epstein_Ross_CE02
             }
         }
 
+        //get selection
         public static void Selection()
         {
+            //get length of menu
             int menuLength = menu.Count - 1 ;
-            
-            
-            
             int i = 1;
             foreach (var item in menu)
             {
@@ -60,7 +61,7 @@ namespace Epstein_Ross_CE02
                     i++;
                 }
                 
-                
+                //error if menu selection out of range    
                 Console.Write($"Invalid entry!  Please enter a number between 1 and {menuLength} > ");
                 _userChoice = Console.ReadLine();
                 isInt = Validation.CheckInt(_userChoice);
@@ -72,12 +73,20 @@ namespace Epstein_Ross_CE02
             string chosenItem = menu[_userChoiceInt - 1];
             
             //switch statement to handle the chosen menu item
-            switch (chosenItem.ToLower())
+            /**
+             * The choice is determined by grabbing the text from
+             * list, taking the text value from the index, and 
+             * then checking that text in the switch case.  The
+             * selection comparison is case sensitive.
+             * **/
+            switch (chosenItem)
             {
-                case "create course":
+
+                //added checks to make sure new course isn't null
+                case "Create Course":
                     CreateCourse();
                     break;
-                case "create teacher":
+                case "Create Teacher":
                     if (newCourse == null)
                     {
                         Console.WriteLine("PLEASE CREATE A COURSE BEFORE SELECTING THIS OPTION!");
@@ -90,7 +99,7 @@ namespace Epstein_Ross_CE02
                         CreateTeacher();
                     }
                     break;
-                case "add student":
+                case "Add Student":
                     if (newCourse == null)
                     {
                         Console.WriteLine("PLEASE CREATE A COURSE BEFORE SELECTING THIS OPTION!");
@@ -103,7 +112,7 @@ namespace Epstein_Ross_CE02
                         AddStudent();
                     }
                     break;
-                case "display":
+                case "Display":
 
                     if (newCourse == null)
                     {
@@ -119,7 +128,7 @@ namespace Epstein_Ross_CE02
                     }
                     
                     break;
-                case "exit":
+                case "Exit":
                     Console.WriteLine("Thank you for using my application!");
                     exit = true;
                     break;
@@ -131,6 +140,8 @@ namespace Epstein_Ross_CE02
 
         public static void CreateCourse()
         {
+            //CREATE COURSE
+            //get course name
             Console.Clear();
             Console.Write("What is the name of the course you would like to create?  >  ");
             string courseName = Console.ReadLine();
@@ -143,11 +154,8 @@ namespace Epstein_Ross_CE02
                 courseName = Console.ReadLine();
                 courseNameValid = Validation.ValidateString(courseName);
             }
-            /**
-            _courseTitle = courseTitle;
-            _courseDecsription = courseDescription;
-            _teacher = teacher;
-            _student = student;**/
+            
+            //course description
             Console.Clear();
             Console.Write("What is the description of the course?  >  ");
             string courseDescription = Console.ReadLine();
@@ -162,7 +170,7 @@ namespace Epstein_Ross_CE02
             }
 
 
-            //create teacher
+            //CREATE TEACHER
             //teacher name
             Console.Clear();
             Console.Write("What is the name of the teacher for this course?  >  ");
@@ -220,13 +228,18 @@ namespace Epstein_Ross_CE02
 
             Teacher newTeacher = new Teacher(teacherName, teacherDescription, teacherAgeInt, teacherInfo);
 
-            //create student
+            //CREATE STUDENT
+            
             List<Student> newStudents = new List<Student>();
             bool doneMakingStudents = false;
             int i = 0;
+
+            //loop until done making students
             while (!doneMakingStudents) 
             {
+
                 i++;
+                //student name
                 Console.Clear();
                 Console.Write($"What is student {i}'s name?  >  ");
                 string studentName = Console.ReadLine();
@@ -240,8 +253,9 @@ namespace Epstein_Ross_CE02
                     studentName = Console.ReadLine();
                     studentNameValid = Validation.ValidateString(studentName);
                 }
-
                 Console.Clear();
+
+                //student description
                 Console.Write($"What is student {i}'s description?  >  ");
                 string studentDescription = Console.ReadLine();
                 bool studentDescriptionValid = Validation.ValidateString(studentDescription);
@@ -255,6 +269,8 @@ namespace Epstein_Ross_CE02
                     studentDescriptionValid = Validation.ValidateString(studentDescription);
                 }
 
+
+                //student age
                 Console.Clear();
                 Console.Write($"How old is student {i}?  >  ");
                 string studentAge = Console.ReadLine();
@@ -272,7 +288,8 @@ namespace Epstein_Ross_CE02
                 int studentAgeInt = Int32.Parse(studentAge);
 
                 Console.Clear();
-
+                
+                //student grade
                 Console.Write($"What is student {i}'s grade?  >  ");
                 string studentGrade = Console.ReadLine();
                 bool studentGradeValid = Validation.CheckInt(studentGrade);
@@ -290,10 +307,12 @@ namespace Epstein_Ross_CE02
 
                 Student newStudent = new Student(studentName, studentDescription, studentAgeInt, studentGradeInt);
 
+                //add student to list
                 newStudents.Add(newStudent);
 
                 Console.Clear();
 
+                //verify whether user wants to add another student or not
                 Console.Write("Would you like to add another student?  Yes/No >  ");
                 string addAnotherStudent = Console.ReadLine();
 
@@ -316,10 +335,11 @@ namespace Epstein_Ross_CE02
                 
             
             }
-
+            
+            //convert the list of students to a student array
             Student[] courseStudents = newStudents.ToArray();
 
-
+            //use all data created in the function to create a course
             newCourse = new Course(newTeacher, courseStudents, courseName, courseDescription);
 
             
@@ -412,14 +432,16 @@ namespace Epstein_Ross_CE02
                 teacherInfoValid = Validation.ValidateString(teacherInfo);
             }
 
-
+            //create an object from the new teacher info
             Teacher newTeacher = new Teacher(teacherName, teacherDescription, teacherAgeInt, teacherInfo);
 
+            //reassign the course's teacher
             newCourse._teacher = newTeacher;
             
         }
         public static void AddStudent() 
         {
+            //add students to the existing students in the course
             List<Student> newStudents = new List<Student>();
             bool doneMakingStudents = false;
             int i = 0;
@@ -517,12 +539,16 @@ namespace Epstein_Ross_CE02
 
             }
 
+            //create array from new students
             Student[] newStudentsArray = newStudents.ToArray();
 
+            //get old student list
             Student[] oldStudentArray = newCourse._student;
 
+            //combine the two arrays
             Student[] combined = oldStudentArray.Concat(newStudentsArray).ToArray();
 
+            //reassign the value of the students in the course
             newCourse._student = combined;
         }
 
