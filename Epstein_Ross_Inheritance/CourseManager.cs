@@ -85,7 +85,17 @@ namespace Epstein_Ross_CE02
                     }
                     break;
                 case "add student":
-            
+                    if (newCourse == null)
+                    {
+                        Console.WriteLine("PLEASE CREATE A COURSE BEFORE SELECTING THIS OPTION!");
+                        Console.WriteLine("Press any key to continue...");
+                        Console.ReadKey();
+                        Console.Clear();
+                    }
+                    else 
+                    {
+                        AddStudent();
+                    }
                     break;
                 case "display":
 
@@ -402,7 +412,113 @@ namespace Epstein_Ross_CE02
             newCourse._teacher = newTeacher;
             
         }
+        public static void AddStudent() 
+        {
+            List<Student> newStudents = new List<Student>();
+            bool doneMakingStudents = false;
+            int i = 0;
+            while (!doneMakingStudents)
+            {
+                i++;
+                Console.Clear();
+                Console.Write($"What is student {i}'s name?  >  ");
+                string studentName = Console.ReadLine();
 
+                bool studentNameValid = Validation.ValidateString(studentName);
+                while (!studentNameValid)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Invalid Entry!");
+                    Console.Write($"What is student {i}'s name?  >  ");
+                    studentName = Console.ReadLine();
+                    studentNameValid = Validation.ValidateString(studentName);
+                }
+
+                Console.Clear();
+                Console.Write($"What is student {i}'s description?  >  ");
+                string studentDescription = Console.ReadLine();
+                bool studentDescriptionValid = Validation.ValidateString(studentDescription);
+
+                while (!studentDescriptionValid)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Invalid entry!");
+                    Console.WriteLine($"What is student {i}'s description?");
+                    studentDescription = Console.ReadLine();
+                    studentDescriptionValid = Validation.ValidateString(studentDescription);
+                }
+
+                Console.Clear();
+                Console.Write($"How old is student {i}?  >  ");
+                string studentAge = Console.ReadLine();
+                bool studentAgeValid = Validation.CheckInt(studentAge);
+
+                while (!studentAgeValid)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Invalid entry!");
+                    Console.WriteLine($"How old is student {i}?  >  ");
+                    studentAge = Console.ReadLine();
+                    studentAgeValid = Validation.CheckInt(studentAge);
+                }
+
+                int studentAgeInt = Int32.Parse(studentAge);
+
+                Console.Clear();
+
+                Console.Write($"What is student {i}'s grade?  >  ");
+                string studentGrade = Console.ReadLine();
+                bool studentGradeValid = Validation.CheckInt(studentGrade);
+
+                while (!studentGradeValid)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Invalid entry!");
+                    Console.Write($"What is student {i}'s grade?  >  ");
+                    studentGrade = Console.ReadLine();
+                    studentGradeValid = Validation.CheckInt(studentGrade);
+                }
+
+                int studentGradeInt = Int32.Parse(studentGrade);
+
+                Student newStudent = new Student(studentName, studentDescription, studentAgeInt, studentGradeInt);
+
+                newStudents.Add(newStudent);
+
+                Console.Clear();
+
+                Console.Write("Would you like to add another student?  Yes/No >  ");
+                string addAnotherStudent = Console.ReadLine();
+
+                bool addAnotherStudentValidate = Validation.ValidateString(addAnotherStudent);
+
+                while (!addAnotherStudentValidate || (addAnotherStudent.ToLower() != "yes" && addAnotherStudent.ToLower() != "no"))
+                {
+                    Console.Clear();
+                    Console.WriteLine("Invalid entry!");
+                    Console.Write("Would you like to add another student?  Yes/No >  ");
+                    addAnotherStudent = Console.ReadLine();
+                    addAnotherStudentValidate = Validation.ValidateString(addAnotherStudent);
+                }
+
+                if (addAnotherStudent.ToLower() == "yes")
+                {
+                    doneMakingStudents = false;
+                }
+
+                if (addAnotherStudent.ToLower() == "no") { doneMakingStudents = true; }
+
+
+            }
+
+            Student[] newStudentsArray = newStudents.ToArray();
+
+            Student[] oldStudentArray = newCourse._student;
+
+            Student[] combined = oldStudentArray.Concat(newStudentsArray).ToArray();
+
+            newCourse._student = combined;
+        }
 
     }
 }
