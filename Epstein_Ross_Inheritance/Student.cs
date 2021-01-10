@@ -8,7 +8,7 @@ namespace Epstein_Ross_Inheritance
     {
 
         public int _grade { get; set; }
-        public Student(string name, string personDescription, int age, int grade):base(name, personDescription, age)
+        public Student(string name = "AWAITING NAME", string personDescription = "AWAITING DESCRIPTION", int age = 00, int grade = 0):base(name, personDescription, age)
         {
             _grade = grade;
         }

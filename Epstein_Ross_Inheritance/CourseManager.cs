@@ -11,8 +11,9 @@ namespace Epstein_Ross_Inheritance
 
         public CourseManager()
         {
-            /**           Console.WriteLine("Testing");
-                       Student student = new Student("bob", "a guy who does things", 21, 100);
+            /**
+               Console.WriteLine("Testing");
+                       Student student = new Student(grade: 100);
                        Console.WriteLine(student._name);
                        Console.WriteLine(student._age);
                        Console.WriteLine(student._personDescription);
@@ -24,6 +25,7 @@ namespace Epstein_Ross_Inheritance
                        Console.WriteLine(teacher._personDescription);
                        Console.WriteLine(teacher._teacherInfo);
             **/
+            
 
 
             //loop the program
