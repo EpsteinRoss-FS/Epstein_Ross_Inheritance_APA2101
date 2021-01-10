@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Epstein_Ross_Inheritance
+namespace Epstein_Ross_CE02
 {
     class Course
     {

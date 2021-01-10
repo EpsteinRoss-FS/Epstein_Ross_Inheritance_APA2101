@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Epstein_Ross_Inheritance
+namespace Epstein_Ross_CE02
 {
     class CourseManager
     {
@@ -83,14 +83,12 @@ namespace Epstein_Ross_Inheritance
 
             //get the text value from the menu index based on user choice
             string chosenItem = menu[_userChoiceInt - 1];
-            Console.WriteLine(chosenItem);
-
+            
             //switch statement to handle the chosen menu item
             switch (chosenItem.ToLower())
             {
                 case "create course":
-
-
+                    CreateCourse();
                     break;
                 case "create teacher":
             
@@ -109,7 +107,25 @@ namespace Epstein_Ross_Inheritance
             }
             
         }
-    }
 
+        public static void CreateCourse() 
+        {
+            Console.Clear();
+            Console.WriteLine("What is the name of the course you would like to create?  >  ");
+            string courseName = Console.ReadLine();
+            bool courseNameValid = Validation.ValidateString(courseName);
+
+            while (!courseNameValid) 
+            {
+                Console.WriteLine("Invalid Entry!");
+                Console.WriteLine("What is the name of the course you would like to create?  >  ");
+                courseName = Console.ReadLine();
+                courseNameValid = Validation.ValidateString(courseName);
+            }
+
+
+
+        }
     }
+}
 

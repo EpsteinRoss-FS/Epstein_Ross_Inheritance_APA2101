@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Epstein_Ross_Inheritance
+namespace Epstein_Ross_CE02
 {
     class Program
     {

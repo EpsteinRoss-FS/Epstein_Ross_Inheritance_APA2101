@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\FullSailDocs\\Classes\\8 - Application Architecture\\1 - Review, Enapsulation, and Inheritance\\1.5\\Epstein_Ross_Inheritance\\Epstein_Ross_Inheritance\\Epstein_Ross_Inheritance.csproj",
-      "projectName": "Epstein_Ross_Inheritance",
-      "projectPath": "H:\\FullSailDocs\\Classes\\8 - Application Architecture\\1 - Review, Enapsulation, and Inheritance\\1.5\\Epstein_Ross_Inheritance\\Epstein_Ross_Inheritance\\Epstein_Ross_Inheritance.csproj",
+      "projectUniqueName": "H:\\FullSailDocs\\Classes\\8 - Application Architecture\\1 - Review, Enapsulation, and Inheritance\\1.5\\Epstein_Ross_Inheritance\\Epstein_Ross_Inheritance\\Epstein_Ross_CE02.csproj",
+      "projectName": "Epstein_Ross_CE02",
+      "projectPath": "H:\\FullSailDocs\\Classes\\8 - Application Architecture\\1 - Review, Enapsulation, and Inheritance\\1.5\\Epstein_Ross_Inheritance\\Epstein_Ross_Inheritance\\Epstein_Ross_CE02.csproj",
       "packagesPath": "C:\\Users\\rosse\\.nuget\\packages\\",
       "outputPath": "H:\\FullSailDocs\\Classes\\8 - Application Architecture\\1 - Review, Enapsulation, and Inheritance\\1.5\\Epstein_Ross_Inheritance\\Epstein_Ross_Inheritance\\obj\\",
       "projectStyle": "PackageReference",
