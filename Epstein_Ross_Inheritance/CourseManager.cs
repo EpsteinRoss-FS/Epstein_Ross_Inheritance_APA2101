@@ -111,17 +111,101 @@ namespace Epstein_Ross_CE02
         public static void CreateCourse() 
         {
             Console.Clear();
-            Console.WriteLine("What is the name of the course you would like to create?  >  ");
+            Console.Write("What is the name of the course you would like to create?  >  ");
             string courseName = Console.ReadLine();
             bool courseNameValid = Validation.ValidateString(courseName);
 
             while (!courseNameValid) 
             {
                 Console.WriteLine("Invalid Entry!");
-                Console.WriteLine("What is the name of the course you would like to create?  >  ");
+                Console.Write("What is the name of the course you would like to create?  >  ");
                 courseName = Console.ReadLine();
                 courseNameValid = Validation.ValidateString(courseName);
             }
+            /**
+            _courseTitle = courseTitle;
+            _courseDecsription = courseDescription;
+            _teacher = teacher;
+            _student = student;**/
+            Console.Clear();
+            Console.Write("What is the description of the course?  >  ");
+            string courseDescription = Console.ReadLine();
+            bool courseDescriptionValid = Validation.ValidateString(courseDescription);
+
+            while (!courseDescriptionValid)
+            {
+                Console.WriteLine("Invalid Entry!");
+                Console.Write("What is the description of the course?  >  ");
+                courseDescription = Console.ReadLine();
+                courseDescriptionValid = Validation.ValidateString(courseDescription);
+            }
+
+            //create teacher
+            //teacher name
+            Console.Clear();
+            Console.WriteLine("What is the name of the teacher for this course?  >  ");
+            string teacherName = Console.ReadLine();
+            bool teacherNameValid = Validation.ValidateString(teacherName);
+            while (!teacherNameValid)
+            {
+                Console.WriteLine("Invalid Entry!");
+                Console.Write("What is the name of the teacher for this course?  >  ");
+                teacherName = Console.ReadLine();
+                teacherNameValid = Validation.ValidateString(teacherName);
+            }
+
+            //teacher description
+            Console.Clear();
+            Console.WriteLine("What is the description of the teacher?  >  ");
+            string teacherDescription = Console.ReadLine();
+            bool teachDescriptionValid = Validation.ValidateString(teacherDescription);
+            while (!teachDescriptionValid)
+            {
+                Console.WriteLine("Invalid Entry!");
+                Console.Write("What is the description of the teacher?  >  ");
+                teacherDescription = Console.ReadLine();
+                teachDescriptionValid = Validation.ValidateString(teacherDescription);
+            }
+
+            //teacher age
+            Console.Clear();
+            Console.WriteLine("How old is the teacher?  >  ");
+            string teacherAge = Console.ReadLine();
+            bool teacherAgeValid = Validation.CheckInt(teacherAge);
+            while (!teacherAgeValid)
+            {
+                Console.WriteLine("Invalid Entry!");
+                Console.Write("How old is the teacher?  >  ");
+                teacherAge = Console.ReadLine();
+                teacherAgeValid = Validation.CheckInt(teacherAge);
+            }
+
+            int teacherAgeInt = teacherAgeValid ? Int32.Parse(teacherAge) : 000;
+
+            //teacher info
+            Console.Clear();
+            Console.Write("What is the description of the teacher?  >  ");
+            string teacherInfo = Console.ReadLine();
+            bool teacherInfoValid = Validation.ValidateString(teacherInfo);
+            while (!teacherInfoValid)
+            {
+                Console.WriteLine("Invalid Entry!");
+                Console.Write("What is the description of the teacher?  >  ");
+                teacherInfo = Console.ReadLine();
+                teacherInfoValid = Validation.ValidateString(teacherInfo);
+            }
+
+
+            Teacher newTeacher = new Teacher(teacherName, teacherDescription, teacherAgeInt, teacherInfo);
+
+            
+
+
+            //Course newCourse = new Course();
+
+
+
+
 
 
 
