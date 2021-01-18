@@ -370,14 +370,14 @@ namespace Epstein_Ross_CE02
 
             Console.WriteLine($"COURSE NAME: {newCourse._courseTitle}");
             Console.WriteLine($"COURSE DESCRIPTION: {newCourse._courseDecsription}");
-            Console.WriteLine($"\nTEACHER NAME: {newCourse._teacher._name}");
+            Console.WriteLine($"\nTEACHER NAME: {newCourse._teacher.Name}");
             Console.WriteLine($"TEACHER AGE: {newCourse._teacher._age}");
             Console.WriteLine($"TEACHER INFO: {newCourse._teacher._teacherInfo}");
             Console.WriteLine($"TEACHER DESCRIPTION: {newCourse._teacher._personDescription}");
 
             foreach (var student in newCourse._student) 
             {
-                Console.WriteLine($"\nSTUDENT NAME: {student._name}");
+                Console.WriteLine($"\nSTUDENT NAME: {student.Name}");
                 Console.WriteLine($"STUDENT AGE: {student._age}");
                 Console.WriteLine($"STUDENT GRADE: {student._grade}");
                 Console.WriteLine($"STUDENT DESCRIPTION: {student._personDescription}");
@@ -574,7 +574,7 @@ namespace Epstein_Ross_CE02
             int i = 1;
             foreach (var student in newCourse._student)
             {
-                Console.WriteLine($"[{i}]: {student._name}");
+                Console.WriteLine($"[{i}]: {student.Name}");
                 i++;
             }
 
@@ -609,7 +609,7 @@ namespace Epstein_Ross_CE02
 
             
             
-            Console.Write($"What would you like to change the grade for {newCourse._student[_userChoiceInt - 1]._name} to? ");
+            Console.Write($"What would you like to change the grade for {newCourse._student[_userChoiceInt - 1].Name} to? ");
 
             string newGrade = Console.ReadLine();
             bool validateGradeInt = Validation.CheckInt(newGrade);
@@ -618,7 +618,7 @@ namespace Epstein_Ross_CE02
             {
                 Console.Clear();
                 Console.WriteLine("Invalid entry!  Grades must be between 0 and 100!");
-                Console.Write($"What would you like to change the grade for {newCourse._student[_userChoiceInt - 1]._name} to? ");
+                Console.Write($"What would you like to change the grade for {newCourse._student[_userChoiceInt - 1].Name} to? ");
 
                 newGrade = Console.ReadLine();
                 validateGradeInt = Validation.CheckInt(newGrade);

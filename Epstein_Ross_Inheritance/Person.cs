@@ -8,7 +8,11 @@ namespace Epstein_Ross_CE02
     class Person
     {
 
-        public string _name { get; set; }
+        protected string _name; 
+        public string Name 
+        {
+            get{ return _name; }
+        }
         public string _personDescription { get; set; }
         public int _age { get; set; }
 
