@@ -365,11 +365,11 @@ namespace Epstein_Ross_CE02
             
             Console.Clear();
             Console.WriteLine($"===========================================");
-            Console.WriteLine($"COURSE {newCourse._courseTitle.ToUpper()} INFORMATION");
+            Console.WriteLine($"COURSE {newCourse.CourseTitle.ToUpper()} INFORMATION");
             Console.WriteLine($"===========================================");
 
-            Console.WriteLine($"COURSE NAME: {newCourse._courseTitle}");
-            Console.WriteLine($"COURSE DESCRIPTION: {newCourse._courseDecsription}");
+            Console.WriteLine($"COURSE NAME: {newCourse.CourseTitle}");
+            Console.WriteLine($"COURSE DESCRIPTION: {newCourse.CourseDescription}");
             Console.WriteLine($"\nTEACHER NAME: {newCourse._teacher.Name}");
             Console.WriteLine($"TEACHER AGE: {newCourse._teacher._age}");
             Console.WriteLine($"TEACHER INFO: {newCourse._teacher._teacherInfo}");

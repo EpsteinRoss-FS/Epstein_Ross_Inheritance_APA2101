@@ -11,8 +11,11 @@ namespace Epstein_Ross_CE02
 {
     class Course
     {
-        public string _courseTitle { get; set; }
-        public string _courseDecsription { get; set; }
+        protected string _courseTitle;
+        public string CourseTitle { get { return _courseTitle; } }
+        protected string _courseDecsription;
+        public string CourseDescription { get { return _courseDecsription; } }
+        
         public Teacher _teacher { get; set; }
         public Student[] _student { get; set; }
         public Teacher teacher = new Teacher();

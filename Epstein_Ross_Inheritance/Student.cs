@@ -12,7 +12,7 @@ namespace Epstein_Ross_CE02
     class Student : Person
     {
 
-        protected int _grade;
+        protected int _grade;                                                                                                                                                            
         public static int _newGrade;
         public int Grade
         {
