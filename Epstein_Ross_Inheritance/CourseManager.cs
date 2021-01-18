@@ -379,7 +379,7 @@ namespace Epstein_Ross_CE02
             {
                 Console.WriteLine($"\nSTUDENT NAME: {student.Name}");
                 Console.WriteLine($"STUDENT AGE: {student._age}");
-                Console.WriteLine($"STUDENT GRADE: {student._grade}");
+                Console.WriteLine($"STUDENT GRADE: {student.Grade}");
                 Console.WriteLine($"STUDENT DESCRIPTION: {student._personDescription}");
 
             }
@@ -628,7 +628,12 @@ namespace Epstein_Ross_CE02
 
             int gradeInt = Int32.Parse(newGrade);
 
-            newCourse._student[_userChoiceInt - 1]._grade = gradeInt;
+            newCourse._student[_userChoiceInt - 1].Grade = gradeInt;
+
+ 
+
+            
+
             Console.Clear();
 
         }
